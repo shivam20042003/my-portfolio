@@ -31,7 +31,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
       >
-        Full-Stack Developer | Minimalist Thinker | Innovating for the Future
+        Full-Stack Developer | Apple-Inspired Minimalist | Innovating for the Future
       </motion.p>
 
       {/* CTA Buttons with Smooth Scale Effect */}
