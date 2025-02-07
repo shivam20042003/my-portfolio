@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-[75vh] flex flex-col justify-center items-center text-center bg-gray-100 dark:bg-gray-900 text-black dark:text-white px-6"
+      className="min-h-[75vh] flex flex-col justify-center items-center text-center bg-gray-100 dark:bg-neutral-900 text-black dark:text-white px-6"
     >
       {/* Hero Heading */}
       <motion.h1
