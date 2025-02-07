@@ -27,13 +27,14 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center text-center px-6 bg-white dark:bg-black text-black dark:text-white py-16">
+    <section className="min-h-[75vh] flex flex-col items-center text-center px-6 bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-16">
       {/* Title */}
       <motion.h2
         className="text-4xl md:text-6xl font-bold mb-12"
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         My Projects
       </motion.h2>
@@ -45,8 +46,9 @@ const Projects = () => {
             key={index}
             className="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
+            viewport={{ once: true }}
           >
             {/* Project Image */}
             <img

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import ThemeToggle from "./ThemeToggle";
 import { motion } from "framer-motion";
 
@@ -14,23 +14,31 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       {/* Logo */}
-      <Link to="/" className="text-2xl font-bold dark:text-white">
+      <ScrollLink 
+        to="hero" 
+        smooth={true} 
+        duration={800} 
+        className="text-2xl font-bold dark:text-white cursor-pointer"
+      >
         <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text font-[Playfair Display]">
           Shivam Kumar Singh
         </span>
-      </Link>
+      </ScrollLink>
 
       {/* Desktop Nav Links */}
       <div className="hidden md:flex space-x-6">
         {["Home", "About", "Projects", "Contact"].map((item) => (
-          <Link 
+          <ScrollLink 
             key={item} 
-            to={`/${item.toLowerCase()}`} 
-            className="text-lg dark:text-white relative group"
+            to={item.toLowerCase()} 
+            smooth={true} 
+            duration={800} 
+            offset={-70} // Adjusts for navbar height
+            className="text-lg dark:text-white relative group cursor-pointer"
           >
             {item}
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-          </Link>
+          </ScrollLink>
         ))}
       </div>
 
@@ -56,15 +64,18 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
         >
           {["Home", "About", "Projects", "Contact"].map((item) => (
-            <Link 
+            <ScrollLink 
               key={item} 
-              to={`/${item.toLowerCase()}`} 
-              className="text-lg dark:text-white relative group"
+              to={item.toLowerCase()} 
+              smooth={true} 
+              duration={800} 
+              offset={-70}
+              className="text-lg dark:text-white relative group cursor-pointer"
               onClick={() => setIsOpen(false)}
             >
               {item}
               <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+            </ScrollLink>
           ))}
         </motion.div>
       )}

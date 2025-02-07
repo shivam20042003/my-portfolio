@@ -4,14 +4,15 @@ import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from "react-icons/fa";
 const Contact = () => {
   return (
     <section
-      className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-white dark:bg-black text-black dark:text-white py-16"
+      className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gray-100 dark:bg-neutral-900 text-black dark:text-white py-16"
     >
       {/* Title */}
       <motion.h2
         className="text-4xl md:text-6xl font-bold mb-6"
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         Get in Touch
       </motion.h2>
@@ -20,8 +21,9 @@ const Contact = () => {
       <motion.p
         className="max-w-2xl text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8"
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
+        viewport={{ once: true }}
       >
         Have a project in mind or just want to say hi? Feel free to drop me a message!  
         I'm always open to discussing new opportunities and collaborations.
@@ -29,66 +31,68 @@ const Contact = () => {
 
       {/* Contact Form */}
       <motion.form
-        className="w-full max-w-lg bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        action="https://formspree.io/f/your-form-id" // Replace with your Formspree ID
-        method="POST"
-      >
-        {/* Name */}
-        <div className="mb-4">
-          <label className="block text-left text-gray-600 dark:text-gray-300 font-medium mb-1">
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            required
-            className="w-full px-4 py-2 border rounded-lg bg-white dark:bg-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
+  className="w-full max-w-lg bg-gray-100 dark:bg-neutral-800 p-6 rounded-xl shadow-lg"
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.5, delay: 0.5 }}
+  viewport={{ once: true }}
+  action="https://formspree.io/f/your-form-id" // Replace with your Formspree ID
+  method="POST"
+>
+  {/* Name */}
+  <div className="mb-4">
+    <label className="block text-left text-gray-700 dark:text-gray-300 font-medium mb-1">
+      Name
+    </label>
+    <input
+      type="text"
+      name="name"
+      required
+      className="w-full px-4 py-2 border rounded-lg bg-white dark:bg-neutral-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
 
-        {/* Email */}
-        <div className="mb-4">
-          <label className="block text-left text-gray-600 dark:text-gray-300 font-medium mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            required
-            className="w-full px-4 py-2 border rounded-lg bg-white dark:bg-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
+  {/* Email */}
+  <div className="mb-4">
+    <label className="block text-left text-gray-700 dark:text-gray-300 font-medium mb-1">
+      Email
+    </label>
+    <input
+      type="email"
+      name="email"
+      required
+      className="w-full px-4 py-2 border rounded-lg bg-white dark:bg-neutral-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
 
-        {/* Message */}
-        <div className="mb-4">
-          <label className="block text-left text-gray-600 dark:text-gray-300 font-medium mb-1">
-            Message
-          </label>
-          <textarea
-            name="message"
-            rows="4"
-            required
-            className="w-full px-4 py-2 border rounded-lg bg-white dark:bg-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          ></textarea>
-        </div>
+  {/* Message */}
+  <div className="mb-4">
+    <label className="block text-left text-gray-700 dark:text-gray-300 font-medium mb-1">
+      Message
+    </label>
+    <textarea
+      name="message"
+      rows="4"
+      required
+      className="w-full px-4 py-2 border rounded-lg bg-white dark:bg-neutral-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+    ></textarea>
+  </div>
 
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-lg font-semibold hover:bg-blue-600 transition"
-        >
-          Send Message
-        </button>
-      </motion.form>
+  {/* Submit Button */}
+  <button
+    type="submit"
+    className="w-full bg-blue-500 text-white py-2 rounded-lg font-semibold hover:bg-blue-600 transition"
+  >
+    Send Message
+  </button>
+</motion.form>
 
       {/* Social Links */}
       <motion.div
         className="flex gap-6 mt-8"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.7 }}
       >
         <a href="https://instagram.com/your-username" target="_blank" rel="noopener noreferrer">
