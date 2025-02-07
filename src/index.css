@@ -13,6 +13,9 @@
     pointer-events: none;
     z-index: 9999;
   }
+  body{
+    background-color: black;
+  }
   
   @keyframes rippleEffect {
     0% {
